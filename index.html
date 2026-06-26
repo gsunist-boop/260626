@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>미니 게임 허브</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    color: #fff;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  p.subtitle {
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+  }
+  .card {
+    background: rgba(255,255,255,0.95);
+    color: #333;
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.3);
+  }
+  .card .icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .card .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .card .desc {
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+<h1>🎮 미니 게임 허브</h1>
+<p class="subtitle">즐길 게임을 선택하세요</p>
+<div class="grid">
+  <a class="card" href="minesweeper.html">
+    <span class="icon">💣</span>
+    <div class="title">지뢰찾기</div>
+    <div class="desc">숫자를 보고 지뢰를 피해보세요</div>
+  </a>
+  <a class="card" href="tictactoe.html">
+    <span class="icon">❌</span>
+    <div class="title">틱택토</div>
+    <div class="desc">친구와 함께 즐기는 3x3 대결</div>
+  </a>
+  <a class="card" href="game2048.html">
+    <span class="icon">🔢</span>
+    <div class="title">2048</div>
+    <div class="desc">타일을 합쳐 2048을 만들어보세요</div>
+  </a>
+  <a class="card" href="cardmatch.html">
+    <span class="icon">🃏</span>
+    <div class="title">카드 짝맞추기</div>
+    <div class="desc">같은 카드를 찾아 모두 맞춰보세요</div>
+  </a>
+</div>
+</body>
+</html>
