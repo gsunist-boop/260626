@@ -1,90 +1,315 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>미니 게임 허브</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    color: #fff;
-  }
-  h1 {
-    font-size: 36px;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  }
-  p.subtitle {
-    margin-bottom: 40px;
-    opacity: 0.9;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    width: 100%;
-    max-width: 900px;
-  }
-  .card {
-    background: rgba(255,255,255,0.95);
-    color: #333;
-    border-radius: 16px;
-    padding: 28px 20px;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.3);
-  }
-  .card .icon {
-    font-size: 48px;
-    display: block;
-    margin-bottom: 12px;
-  }
-  .card .title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 6px;
-  }
-  .card .desc {
-    font-size: 14px;
-    color: #666;
-  }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-<h1>🎮 미니 게임 허브</h1>
-<p class="subtitle">즐길 게임을 선택하세요</p>
-<div class="grid">
-  <a class="card" href="minesweeper.html">
-    <span class="icon">💣</span>
-    <div class="title">지뢰찾기</div>
-    <div class="desc">숫자를 보고 지뢰를 피해보세요</div>
-  </a>
-  <a class="card" href="tictactoe.html">
-    <span class="icon">❌</span>
-    <div class="title">틱택토</div>
-    <div class="desc">친구와 함께 즐기는 3x3 대결</div>
-  </a>
-  <a class="card" href="game2048.html">
-    <span class="icon">🔢</span>
-    <div class="title">2048</div>
-    <div class="desc">타일을 합쳐 2048을 만들어보세요</div>
-  </a>
-  <a class="card" href="cardmatch.html">
-    <span class="icon">🃏</span>
-    <div class="title">카드 짝맞추기</div>
-    <div class="desc">같은 카드를 찾아 모두 맞춰보세요</div>
-  </a>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Pretendard", "Inter", -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+</style>
+</helmet>
+
+<div style="position:absolute;left:80px;top:20px;font:800 22px/1 'Pretendard',sans-serif;color:#0F2A52;letter-spacing:-0.02em">JYS마케팅 — 랜딩 페이지 시안 <span style="font:500 14px/1 'Pretendard';color:#9AA3AF;margin-left:8px">Nike 편집형 구조 · JYS 브랜드 컬러</span></div>
+
+<div data-drags-parent="1" style="position:absolute;left:80px;top:74px;font:600 12px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#1F4ED8">HERO — 3가지 방향 비교</div>
+
+<!-- ============ HERO A ============ -->
+<div style="position:absolute;left:80px;top:110px;width:1280px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;font:600 12px/1 'Pretendard';color:#6b7280">시안 A · 포토 중심 (Editorial)</div>
+  <div style="background:#fff;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.1);overflow:hidden">
+    <div style="display:flex;justify-content:flex-end;gap:18px;padding:0 40px;height:34px;align-items:center;background:#F4F5F7;font:500 12px/1 'Pretendard';color:#6b7280">
+      <span>중소기업·소상공인 전문 마케팅</span><span style="color:#cfd4db">·</span><span>평일 09–18시 상담</span>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;border-bottom:1px solid #ECEEF1">
+      <div style="font:800 22px/1 'Pretendard';letter-spacing:-0.02em;color:#0F2A52"><span style="color:#1F4ED8">JYS</span>마케팅</div>
+      <div style="display:flex;gap:32px;font:600 15px/1 'Pretendard';color:#1C1C1E"><span>서비스</span><span>차별점</span><span>요금</span><span>후기</span></div>
+      <div style="background:#FF7A30;color:#fff;font:600 14px/1 'Pretendard';padding:11px 20px;border-radius:9999px">서비스 문의하기</div>
+    </div>
+    <div style="position:relative;height:480px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.05) 0 1px,transparent 1px 13px)">
+      <div style="position:absolute;top:24px;right:24px;font:500 11px/1.4 ui-monospace,'Courier New',monospace;letter-spacing:0.08em;color:#9AA3AF;text-transform:uppercase">[ 캠페인 이미지 · 가게/콘텐츠 현장 ]</div>
+      <div style="position:absolute;left:56px;bottom:56px;max-width:760px">
+        <div style="font:600 13px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#1F4ED8;margin-bottom:20px">SNS · 콘텐츠 마케팅 대행</div>
+        <div style="font:800 76px/0.98 'Pretendard';letter-spacing:-0.03em;color:#0F2A52">작은 예산에도,<br>확실한 성장</div>
+        <div style="font:500 18px/1.6 'Pretendard';color:#4b5563;margin-top:24px;max-width:520px">운영할 시간도, 담당 인력도 부족할 때. SNS와 콘텐츠를 JYS마케팅이 대신 책임집니다.</div>
+        <div style="display:flex;gap:12px;margin-top:32px">
+          <div style="background:#FF7A30;color:#fff;font:600 16px/1 'Pretendard';padding:16px 30px;border-radius:9999px">서비스 문의하기</div>
+          <div style="border:1.5px solid #0F2A52;color:#0F2A52;font:600 16px/1 'Pretendard';padding:14.5px 28px;border-radius:9999px;background:rgba(255,255,255,0.7)">서비스 살펴보기</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- ============ HERO B ============ -->
+<div style="position:absolute;left:1440px;top:110px;width:1280px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;font:600 12px/1 'Pretendard';color:#6b7280">시안 B · 분할형 (Type-driven Split)</div>
+  <div style="background:#fff;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.1);overflow:hidden">
+    <div style="display:flex;justify-content:flex-end;gap:18px;padding:0 40px;height:34px;align-items:center;background:#F4F5F7;font:500 12px/1 'Pretendard';color:#6b7280">
+      <span>중소기업·소상공인 전문 마케팅</span><span style="color:#cfd4db">·</span><span>평일 09–18시 상담</span>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;border-bottom:1px solid #ECEEF1">
+      <div style="font:800 22px/1 'Pretendard';letter-spacing:-0.02em;color:#0F2A52"><span style="color:#1F4ED8">JYS</span>마케팅</div>
+      <div style="display:flex;gap:32px;font:600 15px/1 'Pretendard';color:#1C1C1E"><span>서비스</span><span>차별점</span><span>요금</span><span>후기</span></div>
+      <div style="background:#FF7A30;color:#fff;font:600 14px/1 'Pretendard';padding:11px 20px;border-radius:9999px">서비스 문의하기</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.05fr 0.95fr;height:480px">
+      <div style="padding:64px 56px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font:600 13px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#1F4ED8;margin-bottom:22px">중소기업 · 소상공인 전문</div>
+        <div style="font:800 68px/1.0 'Pretendard';letter-spacing:-0.03em;color:#0F2A52">든든한<br>마케팅<br>파트너</div>
+        <div style="font:500 17px/1.65 'Pretendard';color:#4b5563;margin-top:26px;max-width:440px">대형 대행사처럼 거리감 있지 않게. 옆에서 같이 고민하는 마케팅 파트너가 SNS 운영부터 콘텐츠까지 함께합니다.</div>
+        <div style="display:flex;gap:12px;margin-top:34px">
+          <div style="background:#FF7A30;color:#fff;font:600 16px/1 'Pretendard';padding:16px 30px;border-radius:9999px">서비스 문의하기</div>
+          <div style="border:1.5px solid #1F4ED8;color:#1F4ED8;font:600 16px/1 'Pretendard';padding:14.5px 28px;border-radius:9999px">서비스 보기</div>
+        </div>
+      </div>
+      <div style="position:relative;background:#0F2A52;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.06) 0 1px,transparent 1px 13px)">
+        <div style="position:absolute;left:24px;top:24px;font:500 11px/1.4 ui-monospace,'Courier New',monospace;letter-spacing:0.08em;color:rgba(255,255,255,0.55);text-transform:uppercase">[ 브랜드 캠페인<br>이미지 (세로) ]</div>
+        <div style="position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:8px;background:#fff;color:#0F2A52;font:600 13px/1 'Pretendard';padding:10px 16px;border-radius:9999px">콘텐츠 사례 보기</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO C ============ -->
+<div style="position:absolute;left:2800px;top:110px;width:1280px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;font:600 12px/1 'Pretendard';color:#6b7280">시안 C · 네이비 컬러블록 (Bold)</div>
+  <div style="background:#fff;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.1);overflow:hidden">
+    <div style="display:flex;justify-content:flex-end;gap:18px;padding:0 40px;height:34px;align-items:center;background:#0a1f3d;font:500 12px/1 'Pretendard';color:#9fb0c9">
+      <span>중소기업·소상공인 전문 마케팅</span><span style="color:#33496b">·</span><span>평일 09–18시 상담</span>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;background:#0F2A52;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:800 22px/1 'Pretendard';letter-spacing:-0.02em;color:#fff"><span style="color:#FF7A30">JYS</span>마케팅</div>
+      <div style="display:flex;gap:32px;font:600 15px/1 'Pretendard';color:rgba(255,255,255,0.85)"><span>서비스</span><span>차별점</span><span>요금</span><span>후기</span></div>
+      <div style="background:#FF7A30;color:#fff;font:600 14px/1 'Pretendard';padding:11px 20px;border-radius:9999px">서비스 문의하기</div>
+    </div>
+    <div style="position:relative;height:480px;background:#0F2A52;padding:0 56px;display:flex;flex-direction:column;justify-content:center;overflow:hidden">
+      <div style="position:absolute;right:-80px;top:-80px;width:420px;height:420px;border-radius:9999px;background:radial-gradient(circle,rgba(31,78,216,0.45),transparent 70%)"></div>
+      <div style="position:relative">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px"><span style="width:28px;height:3px;background:#FF7A30"></span><span style="font:600 13px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#FF7A30">데이터 기반 콘텐츠 마케팅</span></div>
+        <div style="font:800 74px/1.0 'Pretendard';letter-spacing:-0.03em;color:#fff">감이 아니라,<br>데이터로 만드는<br><span style="color:#FF7A30">매출 성장</span></div>
+        <div style="font:500 18px/1.6 'Pretendard';color:#b9c4d6;margin-top:26px;max-width:560px">채널 데이터를 분석해, 작은 예산에서도 효과적인 결과를 설계합니다. 감에 의존하지 않는 콘텐츠 전략.</div>
+        <div style="display:flex;gap:12px;margin-top:34px">
+          <div style="background:#FF7A30;color:#fff;font:600 16px/1 'Pretendard';padding:16px 30px;border-radius:9999px">서비스 문의하기</div>
+          <div style="border:1.5px solid rgba(255,255,255,0.45);color:#fff;font:600 16px/1 'Pretendard';padding:14.5px 28px;border-radius:9999px">무료로 진단받기</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- post-it -->
+<div style="position:absolute;left:4160px;top:110px;width:300px;background:#fef4a8;padding:18px 18px;font:500 13px/1.55 'Pretendard';color:#5b4e10;box-shadow:0 1px 3px rgba(0,0,0,.12);transform:rotate(-1.2deg)">
+  세 시안 모두 동일한 본문(아래)으로 이어집니다. 톤만 다릅니다 —<br>· A: 사진이 주인공, 차분<br>· B: 타이포 중심, 친근<br>· C: 네이비+오렌지, 강한 인상<br><br>원하시는 헤더 방향을 골라주시면 한 페이지로 완성합니다.
+</div>
+
+<!-- ============ BODY (SHARED) ============ -->
+<div data-drags-parent="1" style="position:absolute;left:80px;top:712px;font:600 12px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#1F4ED8">본문 섹션 — 모든 시안 공통</div>
+
+<div style="position:absolute;left:80px;top:748px;width:1280px">
+  <div style="background:#fff;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.1);overflow:hidden">
+
+    <!-- trust strip -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:48px;padding:22px 80px;background:#F4F5F7;font:600 14px/1 'Pretendard';color:#6b7280;flex-wrap:wrap">
+      <span style="color:#0F2A52">외식업</span><span style="color:#d4d8de">·</span><span style="color:#0F2A52">뷰티</span><span style="color:#d4d8de">·</span><span style="color:#0F2A52">리테일</span><span style="color:#d4d8de">·</span><span style="color:#0F2A52">소품·공방</span><span style="color:#d4d8de">·</span><span style="color:#0F2A52">학원·서비스업</span><span style="color:#9AA3AF;font-weight:500">업종별 맞춤 운영</span>
+    </div>
+
+    <!-- SERVICES -->
+    <div style="padding:80px 80px 72px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;border-top:2px solid #0F2A52;padding-top:22px;margin-bottom:48px">
+        <div>
+          <div style="font:600 13px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#1F4ED8;margin-bottom:14px">Services</div>
+          <div style="font:800 42px/1.05 'Pretendard';letter-spacing:-0.02em;color:#0F2A52">핵심 서비스 4가지</div>
+        </div>
+        <div style="font:500 15px/1.6 'Pretendard';color:#6b7280;max-width:380px;text-align:right">기획부터 제작, 성과 분석까지. SNS·콘텐츠 운영의 전 과정을 한 곳에서.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:1px solid #ECEEF1">
+        <div style="padding:8px 28px 8px 28px;border-right:1px solid #ECEEF1">
+          <div style="width:100%;height:120px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.05) 0 1px,transparent 1px 11px);display:flex;align-items:center;justify-content:center;font:500 10px/1 ui-monospace,monospace;color:#9AA3AF;letter-spacing:0.06em;margin-bottom:24px">[ 아이콘/사진 ]</div>
+          <div style="font:800 15px/1 'Inter';color:#1F4ED8;margin-bottom:12px">01</div>
+          <div style="font:700 19px/1.3 'Pretendard';color:#0F2A52;margin-bottom:10px">SNS 채널 운영 대행</div>
+          <div style="font:500 14px/1.6 'Pretendard';color:#6b7280">인스타그램·네이버 블로그·유튜브 쇼츠 등 주요 채널의 기획과 운영, 톤앤매너·콘텐츠 캘린더 수립까지.</div>
+        </div>
+        <div style="padding:8px 28px;border-right:1px solid #ECEEF1">
+          <div style="width:100%;height:120px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.05) 0 1px,transparent 1px 11px);display:flex;align-items:center;justify-content:center;font:500 10px/1 ui-monospace,monospace;color:#9AA3AF;letter-spacing:0.06em;margin-bottom:24px">[ 아이콘/사진 ]</div>
+          <div style="font:800 15px/1 'Inter';color:#1F4ED8;margin-bottom:12px">02</div>
+          <div style="font:700 19px/1.3 'Pretendard';color:#0F2A52;margin-bottom:10px">콘텐츠 제작</div>
+          <div style="font:500 14px/1.6 'Pretendard';color:#6b7280">카드뉴스·숏폼 영상·상세페이지 콘텐츠를 기획하고 제작합니다. 브랜드 스토리 기반 카피라이팅 포함.</div>
+        </div>
+        <div style="padding:8px 28px;border-right:1px solid #ECEEF1">
+          <div style="width:100%;height:120px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.05) 0 1px,transparent 1px 11px);display:flex;align-items:center;justify-content:center;font:500 10px/1 ui-monospace,monospace;color:#9AA3AF;letter-spacing:0.06em;margin-bottom:24px">[ 아이콘/사진 ]</div>
+          <div style="font:800 15px/1 'Inter';color:#1F4ED8;margin-bottom:12px">03</div>
+          <div style="font:700 19px/1.3 'Pretendard';color:#0F2A52;margin-bottom:10px">성과 분석 &amp; 전략 리포트</div>
+          <div style="font:500 14px/1.6 'Pretendard';color:#6b7280">채널 인사이트 기반 월간 리포트를 제공하고, 콘텐츠 반응 데이터로 다음 달 전략을 수립합니다.</div>
+        </div>
+        <div style="padding:8px 28px;border-right:1px solid #ECEEF1">
+          <div style="width:100%;height:120px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.05) 0 1px,transparent 1px 11px);display:flex;align-items:center;justify-content:center;font:500 10px/1 ui-monospace,monospace;color:#9AA3AF;letter-spacing:0.06em;margin-bottom:24px">[ 아이콘/사진 ]</div>
+          <div style="font:800 15px/1 'Inter';color:#1F4ED8;margin-bottom:12px">04</div>
+          <div style="font:700 19px/1.3 'Pretendard';color:#0F2A52;margin-bottom:10px">소상공인 맞춤 패키지</div>
+          <div style="font:500 14px/1.6 'Pretendard';color:#6b7280">적은 예산으로 시작하는 단계별 플랜. 외식업·뷰티·리테일 등 업종별 맞춤 전략을 제공합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY / 차별점 -->
+    <div style="padding:80px 80px;background:#0F2A52">
+      <div style="border-top:2px solid #FF7A30;padding-top:22px;margin-bottom:48px">
+        <div style="font:600 13px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#FF7A30;margin-bottom:14px">Why JYS</div>
+        <div style="font:800 42px/1.05 'Pretendard';letter-spacing:-0.02em;color:#fff">왜 JYS마케팅인가</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.12)">
+        <div style="padding:34px 36px 34px 0;border-bottom:1px solid rgba(255,255,255,0.12);border-right:1px solid rgba(255,255,255,0.12);display:flex;gap:24px">
+          <div style="font:800 38px/1 'Inter';color:rgba(255,122,48,0.9);min-width:64px">01</div>
+          <div><div style="font:700 21px/1.3 'Pretendard';color:#fff;margin-bottom:10px">중소기업·소상공인 전문성</div><div style="font:500 15px/1.6 'Pretendard';color:#b9c4d6">대형 브랜드 중심이 아닌, 한정된 예산과 인력 환경을 이해하는 맞춤형 접근.</div></div>
+        </div>
+        <div style="padding:34px 0 34px 36px;border-bottom:1px solid rgba(255,255,255,0.12);display:flex;gap:24px">
+          <div style="font:800 38px/1 'Inter';color:rgba(255,122,48,0.9);min-width:64px">02</div>
+          <div><div style="font:700 21px/1.3 'Pretendard';color:#fff;margin-bottom:10px">합리적인 비용 구조</div><div style="font:500 15px/1.6 'Pretendard';color:#b9c4d6">투입 대비 효과를 중시하는 실속형 패키지로, 작은 예산에서도 시작할 수 있습니다.</div></div>
+        </div>
+        <div style="padding:34px 36px 0 0;border-right:1px solid rgba(255,255,255,0.12);display:flex;gap:24px">
+          <div style="font:800 38px/1 'Inter';color:rgba(255,122,48,0.9);min-width:64px">03</div>
+          <div><div style="font:700 21px/1.3 'Pretendard';color:#fff;margin-bottom:10px">데이터 기반 콘텐츠 전략</div><div style="font:500 15px/1.6 'Pretendard';color:#b9c4d6">감에 의존하지 않고 채널 데이터와 트렌드를 분석해 콘텐츠 방향을 제시합니다.</div></div>
+        </div>
+        <div style="padding:34px 0 0 36px;display:flex;gap:24px">
+          <div style="font:800 38px/1 'Inter';color:rgba(255,122,48,0.9);min-width:64px">04</div>
+          <div><div style="font:700 21px/1.3 'Pretendard';color:#fff;margin-bottom:10px">빠른 실행력</div><div style="font:500 15px/1.6 'Pretendard';color:#b9c4d6">소상공인 특성에 맞는 신속한 의사결정과 콘텐츠 제작 사이클로 빠르게 반응합니다.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div style="padding:80px 80px 72px">
+      <div style="border-top:2px solid #0F2A52;padding-top:22px;margin-bottom:14px">
+        <div style="font:600 13px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#1F4ED8;margin-bottom:14px">Pricing</div>
+        <div style="font:800 42px/1.05 'Pretendard';letter-spacing:-0.02em;color:#0F2A52">합리적인 요금 안내</div>
+      </div>
+      <div style="font:500 15px/1.6 'Pretendard';color:#6b7280;margin-bottom:40px">단계별로 시작하고, 성장에 맞춰 확장하세요. 제안가 기준이며 업종·범위에 따라 조정됩니다.</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <div style="border:1px solid #E6E9ED;padding:36px 32px;display:flex;flex-direction:column">
+          <div style="font:700 16px/1 'Pretendard';color:#1F4ED8;margin-bottom:18px">베이직</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:8px"><span style="font:800 38px/1 'Pretendard';color:#0F2A52">월 69만원</span><span style="font:500 15px/1 'Pretendard';color:#9AA3AF">~</span></div>
+          <div style="font:500 14px/1.5 'Pretendard';color:#9AA3AF;margin-bottom:28px">처음 시작하는 1인·소상공인</div>
+          <div style="display:flex;flex-direction:column;gap:13px;font:500 14.5px/1.5 'Pretendard';color:#3f4754;flex:1">
+            <div>· SNS 1채널 운영</div><div>· 콘텐츠 월 8건</div><div>· 월간 성과 리포트</div><div>· 기본 전략 수립</div>
+          </div>
+          <div style="margin-top:32px;text-align:center;border:1.5px solid #0F2A52;color:#0F2A52;font:600 15px/1 'Pretendard';padding:14px;border-radius:9999px">문의하기</div>
+        </div>
+        <div style="border:1.5px solid #1F4ED8;background:#0F2A52;padding:36px 32px;display:flex;flex-direction:column;position:relative">
+          <div style="position:absolute;top:-13px;left:32px;background:#FF7A30;color:#fff;font:700 12px/1 'Pretendard';padding:7px 14px;border-radius:9999px">가장 인기</div>
+          <div style="font:700 16px/1 'Pretendard';color:#FF7A30;margin-bottom:18px">그로스</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:8px"><span style="font:800 38px/1 'Pretendard';color:#fff">월 129만원</span><span style="font:500 15px/1 'Pretendard';color:#7d90ab">~</span></div>
+          <div style="font:500 14px/1.5 'Pretendard';color:#9fb0c9;margin-bottom:28px">성장에 가속이 필요한 사업체</div>
+          <div style="display:flex;flex-direction:column;gap:13px;font:500 14.5px/1.5 'Pretendard';color:#dbe2ec;flex:1">
+            <div>· SNS 2채널 운영</div><div>· 콘텐츠 월 16건</div><div>· 숏폼 영상 4건</div><div>· 성과 분석 리포트</div><div>· 광고 운영 컨설팅</div>
+          </div>
+          <div style="margin-top:32px;text-align:center;background:#FF7A30;color:#fff;font:600 15px/1 'Pretendard';padding:15.5px;border-radius:9999px">문의하기</div>
+        </div>
+        <div style="border:1px solid #E6E9ED;padding:36px 32px;display:flex;flex-direction:column">
+          <div style="font:700 16px/1 'Pretendard';color:#1F4ED8;margin-bottom:18px">프리미엄</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:8px"><span style="font:800 38px/1 'Pretendard';color:#0F2A52">월 240만원</span><span style="font:500 15px/1 'Pretendard';color:#9AA3AF">~</span></div>
+          <div style="font:500 14px/1.5 'Pretendard';color:#9AA3AF;margin-bottom:28px">전방위 운영이 필요한 브랜드</div>
+          <div style="display:flex;flex-direction:column;gap:13px;font:500 14.5px/1.5 'Pretendard';color:#3f4754;flex:1">
+            <div>· SNS 3채널 운영</div><div>· 콘텐츠 협의(맞춤)</div><div>· 숏폼 영상 8건</div><div>· 전담 매니저 배정</div><div>· 주간 리포트</div>
+          </div>
+          <div style="margin-top:32px;text-align:center;border:1.5px solid #0F2A52;color:#0F2A52;font:600 15px/1 'Pretendard';padding:14px;border-radius:9999px">문의하기</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div style="padding:80px 80px;background:#F4F5F7">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;border-top:2px solid #0F2A52;padding-top:22px;margin-bottom:44px">
+        <div>
+          <div style="font:600 13px/1 'Inter';letter-spacing:0.14em;text-transform:uppercase;color:#1F4ED8;margin-bottom:14px">Reviews</div>
+          <div style="font:800 42px/1.05 'Pretendard';letter-spacing:-0.02em;color:#0F2A52">고객 후기</div>
+        </div>
+        <div style="font:500 13px/1 'Pretendard';color:#9AA3AF">* 실제 적용 전 가상 예시입니다</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <div style="background:#fff;padding:34px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px">
+          <div style="font:600 19px/1.5 'Pretendard';color:#1C1C1E;letter-spacing:-0.01em">“인스타 운영을 맡기고 나서 매장 문의가 눈에 띄게 늘었어요. 바쁜 시간에 콘텐츠 걱정을 덜었습니다.”</div>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:28px">
+            <div style="width:44px;height:44px;border-radius:9999px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.08) 0 1px,transparent 1px 7px)"></div>
+            <div><div style="font:700 15px/1.2 'Pretendard';color:#0F2A52">김O영 대표</div><div style="font:500 13px/1.2 'Pretendard';color:#9AA3AF;margin-top:3px">카페 운영 · 외식업</div></div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:34px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px">
+          <div style="font:600 19px/1.5 'Pretendard';color:#1C1C1E;letter-spacing:-0.01em">“리포트로 어떤 콘텐츠가 반응이 좋은지 매달 확인할 수 있어요. 광고비도 효율적으로 쓰게 됐습니다.”</div>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:28px">
+            <div style="width:44px;height:44px;border-radius:9999px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.08) 0 1px,transparent 1px 7px)"></div>
+            <div><div style="font:700 15px/1.2 'Pretendard';color:#0F2A52">이O준 대표</div><div style="font:500 13px/1.2 'Pretendard';color:#9AA3AF;margin-top:3px">뷰티샵 · 뷰티</div></div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:34px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px">
+          <div style="font:600 19px/1.5 'Pretendard';color:#1C1C1E;letter-spacing:-0.01em">“혼자 하던 블로그·릴스를 체계적으로 맡기니, 본업에 집중할 수 있게 됐습니다.”</div>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:28px">
+            <div style="width:44px;height:44px;border-radius:9999px;background:#F4F5F7;background-image:repeating-linear-gradient(135deg,rgba(15,42,82,0.08) 0 1px,transparent 1px 7px)"></div>
+            <div><div style="font:700 15px/1.2 'Pretendard';color:#0F2A52">박O민 대표</div><div style="font:500 13px/1.2 'Pretendard';color:#9AA3AF;margin-top:3px">소품샵 · 리테일</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT CTA -->
+    <div style="padding:84px 80px;background:#1F4ED8;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <div>
+        <div style="font:800 46px/1.1 'Pretendard';letter-spacing:-0.02em;color:#fff;margin-bottom:22px">지금, 서비스<br>문의하기</div>
+        <div style="font:500 17px/1.65 'Pretendard';color:#cdd9f7;margin-bottom:36px;max-width:420px">업종과 현재 상황을 알려주시면, 적합한 채널과 플랜을 무료로 제안해 드립니다. 부담 없이 문의하세요.</div>
+        <div style="display:flex;flex-direction:column;gap:14px;font:500 15px/1 'Pretendard';color:#e3eaff">
+          <div style="display:flex;gap:12px"><span style="color:#FF7A30;font-weight:700;width:64px">상담시간</span><span>평일 09–18시</span></div>
+          <div style="display:flex;gap:12px"><span style="color:#FF7A30;font-weight:700;width:64px">전화</span><span style="color:#9fb4ee">추후 등록</span></div>
+          <div style="display:flex;gap:12px"><span style="color:#FF7A30;font-weight:700;width:64px">이메일</span><span style="color:#9fb4ee">추후 등록</span></div>
+        </div>
+      </div>
+      <div style="background:#fff;padding:36px 36px;border-radius:4px">
+        <div style="display:flex;gap:14px;margin-bottom:14px">
+          <div style="flex:1"><div style="font:600 13px/1 'Pretendard';color:#6b7280;margin-bottom:8px">이름/상호</div><div style="height:46px;border:1px solid #E0E3E8;border-radius:8px;background:#fafbfc"></div></div>
+          <div style="flex:1"><div style="font:600 13px/1 'Pretendard';color:#6b7280;margin-bottom:8px">연락처</div><div style="height:46px;border:1px solid #E0E3E8;border-radius:8px;background:#fafbfc"></div></div>
+        </div>
+        <div style="margin-bottom:14px"><div style="font:600 13px/1 'Pretendard';color:#6b7280;margin-bottom:8px">업종</div><div style="height:46px;border:1px solid #E0E3E8;border-radius:8px;background:#fafbfc;display:flex;align-items:center;padding:0 14px;font:500 14px/1 'Pretendard';color:#b3b9c2">외식업 / 뷰티 / 리테일 / 기타</div></div>
+        <div style="margin-bottom:22px"><div style="font:600 13px/1 'Pretendard';color:#6b7280;margin-bottom:8px">문의 내용</div><div style="height:96px;border:1px solid #E0E3E8;border-radius:8px;background:#fafbfc"></div></div>
+        <div style="text-align:center;background:#FF7A30;color:#fff;font:700 16px/1 'Pretendard';padding:17px;border-radius:9999px">문의 보내기</div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="padding:64px 80px 40px;background:#0F2A52">
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:44px">
+        <div>
+          <div style="font:800 24px/1 'Pretendard';letter-spacing:-0.02em;color:#fff;margin-bottom:18px"><span style="color:#FF7A30">JYS</span>마케팅</div>
+          <div style="font:500 14px/1.6 'Pretendard';color:#9fb0c9;max-width:300px">중소기업·소상공인의 든든한 마케팅 파트너. SNS·콘텐츠 마케팅 전문 대행.</div>
+        </div>
+        <div>
+          <div style="font:700 13px/1 'Pretendard';color:#fff;margin-bottom:18px">서비스</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:500 14px/1 'Pretendard';color:#9fb0c9"><span>SNS 채널 운영</span><span>콘텐츠 제작</span><span>성과 리포트</span><span>맞춤 패키지</span></div>
+        </div>
+        <div>
+          <div style="font:700 13px/1 'Pretendard';color:#fff;margin-bottom:18px">회사</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:500 14px/1 'Pretendard';color:#9fb0c9"><span>회사 소개</span><span>차별점</span><span>요금 안내</span><span>고객 후기</span></div>
+        </div>
+        <div>
+          <div style="font:700 13px/1 'Pretendard';color:#fff;margin-bottom:18px">문의</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:500 14px/1 'Pretendard';color:#9fb0c9"><span>서비스 문의</span><span>전화 (추후)</span><span>이메일 (추후)</span></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:24px;font:500 12px/1.5 'Pretendard';color:#6f82a0;flex-wrap:wrap;gap:8px">
+        <span>© 2026 JYS마케팅. 본 페이지는 시안이며, 컬러·로고·연락처는 추후 확정 시 교체됩니다.</span>
+        <span>대한민국 · 중소기업·소상공인 전문</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
 </body>
 </html>
